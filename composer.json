@@ -9,9 +9,7 @@
         "source": "https://github.com/PGWireless/php-log"
     },
     "require": {
-        "php": ">=5.4.0",
-        "aws/aws-sdk-php": "*",
-        "nervetattoo/elasticsearch": "^2.4"
+        "php": ">=5.4.0"
     },
     "autoload": {
         "psr-4": {"PG\\": ""}

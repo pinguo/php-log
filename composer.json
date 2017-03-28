@@ -1,0 +1,19 @@
+{
+    "name": "PGWireless/php-log",
+    "description": "Pinguo PHP log lib",
+    "type": "library",
+    "license": "proprietary",
+    "support": {
+        "issues": "https://github.com/PGWireless/php-log/issues?state=open",
+        "wiki": "https://github.com/PGWireless/php-log/wiki",
+        "source": "https://github.com/PGWireless/php-log"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "aws/aws-sdk-php": "*",
+        "nervetattoo/elasticsearch": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {"PG\\": ""}
+    }
+}

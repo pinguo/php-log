@@ -11,6 +11,7 @@ namespace PG\Log;
 use Monolog\{
     Handler\BufferHandler, Logger, Formatter\LineFormatter, Handler\FilterHandler
 };
+
 use PG\Log\Handler\PGStreamHandler;
 
 class PGLog extends Logger

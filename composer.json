@@ -9,9 +9,13 @@
         "source": "https://github.com/PGWireless/php-log"
     },
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=7.0",
+        "monolog/monolog": "2.0.x-dev",
+        "hassankhan/config": "~0.10"
     },
     "autoload": {
-        "psr-4": {"PG\\": ""}
-    }
+        "psr-4": {"PG\\Log\\": "src"}
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

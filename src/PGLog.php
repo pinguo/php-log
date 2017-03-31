@@ -6,12 +6,12 @@
  * @copyright Chengdu pinguo Technology Co.,Ltd.
  */
 
-namespace PG\MSF\Server\Helpers\Log;
+namespace PG\Log;
 
 use Monolog\{
     Handler\BufferHandler, Logger, Formatter\LineFormatter, Handler\FilterHandler
 };
-use PG\MSF\Server\Helpers\Log\Handler\PGStreamHandler;
+use PG\Log\Handler\PGStreamHandler;
 
 class PGLog extends Logger
 {

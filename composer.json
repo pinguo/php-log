@@ -10,7 +10,7 @@
     },
     "require": {
         "php": ">=7.0",
-        "monolog/monolog": "2.0.x-dev",
+        "monolog/monolog": "2.0.x-dev"
     },
     "autoload": {
         "psr-4": {"PG\\Log\\": "src"}

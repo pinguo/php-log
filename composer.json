@@ -13,7 +13,9 @@
         "monolog/monolog": "2.0.x-dev"
     },
     "autoload": {
-        "psr-4": {"PG\\Log\\": "src"}
+        "psr-4": {
+            "PG\\Log\\": "src"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

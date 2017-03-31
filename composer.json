@@ -14,7 +14,9 @@
         "hassankhan/config": "~0.10"
     },
     "autoload": {
-        "psr-4": {"PG\\Log\\": "src"}
+        "psr-4": {
+            "PG\\Log\\": "src"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

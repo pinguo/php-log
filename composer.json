@@ -11,7 +11,6 @@
     "require": {
         "php": ">=7.0",
         "monolog/monolog": "2.0.x-dev",
-        "hassankhan/config": "~0.10"
     },
     "autoload": {
         "psr-4": {"PG\\Log\\": "src"}

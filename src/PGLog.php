@@ -6,13 +6,12 @@
  * @copyright Chengdu pinguo Technology Co.,Ltd.
  */
 
-namespace PG\Log;
+namespace PG\MSF\Server\Helpers\Log;
 
 use Monolog\{
     Handler\BufferHandler, Logger, Formatter\LineFormatter, Handler\FilterHandler
 };
-
-use PG\Log\Handler\PGStreamHandler;
+use PG\MSF\Server\Helpers\Log\Handler\PGStreamHandler;
 
 class PGLog extends Logger
 {
@@ -54,8 +53,7 @@ class PGLog extends Logger
         \DateTimeZone $timezone = null
     ) {
         parent::__construct($name, $handlers, $processors, $timezone);
-        $server = get_instance();
-        $config = $server->config;
+        $config = getInstance()->config;
         foreach ($config['server.log.handlers'] as $handler) {
             $stream = new PGStreamHandler($handler['stream']);
 

@@ -35,7 +35,7 @@ class PGLog extends Logger
      *
      * @var array $levels Logging levels
      */
-    protected static $levels = array(
+    protected static $levels = [
         100 => 'debug',
         200 => 'info',
         250 => 'notice',
@@ -44,7 +44,7 @@ class PGLog extends Logger
         500 => 'critical',
         550 => 'alert',
         600 => 'emergency',
-    );
+    ];
 
     public function __construct(
         string $name,
@@ -108,9 +108,9 @@ class PGLog extends Logger
     /**
      * Adds a log record.（解决原始版本的进程崩溃问题）
      *
-     * @param  int     $level   The logging level
-     * @param  string  $message The log message
-     * @param  array   $context The log context
+     * @param int $level The logging level
+     * @param string $message The log message
+     * @param array $context The log context
      * @return Boolean Whether the record has been processed
      */
     public function addRecord(int $level, string $message, array $context = []): bool
@@ -195,7 +195,7 @@ class PGLog extends Logger
             return '';
         }
 
-        $arrOut = array();
+        $arrOut = [];
         foreach ($this->_profiles as $name => $val) {
             if (!isset($val['cost'], $val['total'])) {
                 continue;
@@ -211,7 +211,7 @@ class PGLog extends Logger
         if (empty($this->_countings)) {
             return '';
         }
-        $arrCounting = array();
+        $arrCounting = [];
         foreach ($this->_countings as $k => $v) {
             if (isset($v['hit'], $v['total']) && $v['total'] != 0) {
                 $arrCounting[] = "$k=" . $v['hit'] . '/' . $v['total'];

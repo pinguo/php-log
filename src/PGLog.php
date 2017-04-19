@@ -103,6 +103,7 @@ class PGLog extends Logger
         $this->_countings = [];
         $this->_pushlogs = [];
         $this->notice($message);
+        $this->processors = [];
     }
 
     /**

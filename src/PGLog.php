@@ -48,13 +48,13 @@ class PGLog extends Logger
 
     public function __construct(
         string $name,
+        array $config,
         array $handlers = [],
         array $processors = [],
         \DateTimeZone $timezone = null
     ) {
         parent::__construct($name, $handlers, $processors, $timezone);
-        $config = getInstance()->config;
-        foreach ($config['server.log.handlers'] as $handler) {
+        foreach ($config['handlers'] as $handler) {
             $stream = new PGStreamHandler($handler['stream']);
 
             //格式

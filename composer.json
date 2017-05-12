@@ -1,8 +1,8 @@
 {
     "name": "PGWireless/php-log",
     "description": "Pinguo PHP log lib",
+    "license": "BSD-3-Clause",
     "type": "library",
-    "license": "proprietary",
     "support": {
         "issues": "https://github.com/PGWireless/php-log/issues?state=open",
         "wiki": "https://github.com/PGWireless/php-log/wiki",

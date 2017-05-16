@@ -47,6 +47,5 @@ class PGStreamHandler extends StreamHandler
 
     public function close()
     {
-
     }
 }

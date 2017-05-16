@@ -8,9 +8,10 @@
 
 namespace PG\Log;
 
-use Monolog\{
-    Handler\BufferHandler, Logger, Formatter\LineFormatter, Handler\FilterHandler
-};
+use Monolog\Handler\BufferHandler;
+use Monolog\Logger;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\FilterHandler;
 use PG\Log\Handler\PGStreamHandler;
 
 class PGLog extends Logger

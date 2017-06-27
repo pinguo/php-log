@@ -229,7 +229,7 @@ class PGLog extends Logger
      * for info level log only
      * @param string|number $key
      * @param string $val
-     * @param int $length 值最大长度，如果传了该参数则超过会进行截取
+     * @param int $length 字符串类型值最大长度【截取时仅对字符串类型值有效】，数组会进行递归处理
      */
     public function pushLog($key, $val = '', $length = null)
     {
@@ -239,29 +239,14 @@ class PGLog extends Logger
         $key = urlencode($key);
         if (is_array($val)) {
             if ($length) {
-                foreach ($val as &$v) {
-                    if (!is_string($v)) {
-                        continue;
-                    }
-                    $len = strlen($v);
-                    $suffix = '';
-                    if  ($len > $length) {
-                        $suffix = '...<' . $len . 'chars>';
-                    }
-                    $v = substr($v, 0, $length) . $suffix;
-                }
+                $val = $this->substrLog($val, $length);
             }
             $this->_pushlogs[] = "$key=" . json_encode($val);
         } elseif (is_bool($val)) {
             $this->_pushlogs[] = "$key=" . var_export($val, true);
         } elseif (is_string($val) || is_numeric($val)) {
-            if ($length) {
-                $len = strlen($val);
-                $suffix = '';
-                if  ($len > $length) {
-                    $suffix = '...<' . $len . 'chars>';
-                }
-                $val = substr($val, 0, $length) . $suffix;
+            if ($length && is_string($val) && strlen($val) > $length) {
+                $val = $this->substrLog($val, $length);
             }
             $this->_pushlogs[] = "$key=" . urlencode($val);
         } elseif (is_null($val)) {
@@ -324,5 +309,23 @@ class PGLog extends Logger
         if ($total !== null) {
             $this->_countings[$name]['total'] += intval($total);
         }
+    }
+
+    /**
+     *  截断日志
+     */
+    protected function substrLog($val, $length)
+    {
+        if (is_array($val)) {
+            foreach ($val as &$v) {
+                if ((is_string($v) && strlen($v) > $length) || is_array($v)) {
+                    $v = $this->substrLog($v, $length);
+                }
+            }
+        } elseif (is_string($val)) {
+            $val = substr($val, 0, $length) . '...<' . strlen($val) . 'chars>';
+        }
+
+        return $val;
     }
 }

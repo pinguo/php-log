@@ -239,7 +239,12 @@ class PGLog extends Logger
         if (is_array($val)) {
             if ($length) {
                 foreach ($val as &$v) {
-                    $v = substr($v, 0, $length) . '...<' . strlen($v) . 'chars>';
+                    $len = strlen($v);
+                    $suffix = '';
+                    if  ($len > $length) {
+                        $suffix = '...<' . $len . 'chars>';
+                    }
+                    $v = substr($v, 0, $length) . $suffix;
                 }
             }
             $this->_pushlogs[] = "$key=" . json_encode($val);
@@ -247,7 +252,12 @@ class PGLog extends Logger
             $this->_pushlogs[] = "$key=" . var_export($val, true);
         } elseif (is_string($val) || is_numeric($val)) {
             if ($length) {
-                $val = substr($val, 0, $length) . '...<' . strlen($val) . 'chars>';
+                $len = strlen($val);
+                $suffix = '';
+                if  ($len > $length) {
+                    $suffix = '...<' . $len . 'chars>';
+                }
+                $val = substr($val, 0, $length) . $suffix;
             }
             $this->_pushlogs[] = "$key=" . urlencode($val);
         } elseif (is_null($val)) {

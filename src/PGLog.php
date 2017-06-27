@@ -317,9 +317,7 @@ class PGLog extends Logger
     {
         if (is_array($val)) {
             foreach ($val as &$v) {
-                if (is_string($v) && strlen($v) > $length) {
-                    $v = $this->substrLog($v, $length);
-                } elseif (is_array($v)) {
+                if ((is_string($v) && strlen($v) > $length) || is_array($v)) {
                     $v = $this->substrLog($v, $length);
                 }
             }

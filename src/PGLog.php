@@ -228,18 +228,27 @@ class PGLog extends Logger
      * for info level log only
      * @param string|number $key
      * @param string $val
+     * @param int $length 值最大长度，如果传了该参数则超过会进行截取
      */
-    public function pushLog($key, $val = '')
+    public function pushLog($key, $val = '', $length = null)
     {
         if (!(is_string($key) || is_numeric($key))) {
             return;
         }
         $key = urlencode($key);
         if (is_array($val)) {
+            if ($length) {
+                foreach ($val as &$v) {
+                    $v = substr($v, 0, $length);
+                }
+            }
             $this->_pushlogs[] = "$key=" . json_encode($val);
         } elseif (is_bool($val)) {
             $this->_pushlogs[] = "$key=" . var_export($val, true);
         } elseif (is_string($val) || is_numeric($val)) {
+            if ($length) {
+                $val = substr($val, 0, $length);
+            }
             $this->_pushlogs[] = "$key=" . urlencode($val);
         } elseif (is_null($val)) {
             $this->_pushlogs[] = "$key=";

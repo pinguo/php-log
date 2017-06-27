@@ -240,6 +240,9 @@ class PGLog extends Logger
         if (is_array($val)) {
             if ($length) {
                 foreach ($val as &$v) {
+                    if (!is_string($v)) {
+                        continue;
+                    }
                     $len = strlen($v);
                     $suffix = '';
                     if  ($len > $length) {

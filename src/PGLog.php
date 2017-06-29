@@ -146,7 +146,7 @@ class PGLog extends Logger
         ];
 
         foreach ($this->processors as $processor) {
-            $record = call_user_func($processor, $record);
+            $record = $processor($record);
         }
 
         while ($handler = current($this->handlers)) {

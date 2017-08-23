@@ -1,10 +1,9 @@
 <?php
-
 /**
- * @desc: Stores to any stream resource
- * @author: leandre <niulingyun@camera360.com>
- * @date: 2017/3/8
- * @copyright All rights reserved.
+ * Async stores to any stream resource
+ *
+ * @author camera360_server@camera360.com
+ * @copyright Chengdu pinguo Technology Co.,Ltd.
  */
 namespace PG\Log\Handler;
 
@@ -14,6 +13,7 @@ class PGStreamHandler extends StreamHandler
 {
     /**
      * 写入日志
+     *
      * @param array $record
      */
     protected function write(array $record)
@@ -45,6 +45,9 @@ class PGStreamHandler extends StreamHandler
         }
     }
 
+    /**
+     * 关闭
+     */
     public function close()
     {
     }

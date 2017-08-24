@@ -2,7 +2,7 @@
 /**
  * PGLog
  * 日志
- * @author niulingyun@camera360.com
+ * @author camera360_server@camera360.com
  * @copyright Chengdu pinguo Technology Co.,Ltd.
  */
 
@@ -21,14 +21,40 @@ class PGLog extends Logger
      * @var array
      */
     public $accessRecord = [];
+
+    /**
+     * @var string 日志ID
+     */
     public $logId;
+
+    /**
+     * @var string 日志通道
+     */
     public $channel;
 
+    /**
+     * @var integer Profile堆栈长度
+     */
     public $profileStackLen = 20;
 
+    /**
+     * @var array Profile数据
+     */
     protected $_profileStacks = [];
+
+    /**
+     * @var array Push日志
+     */
     protected $_pushlogs = [];
+
+    /**
+     * @var array Profile信息
+     */
     protected $_profiles = [];
+
+    /**
+     * @var array 计数
+     */
     protected $_countings = [];
 
     /**
@@ -47,6 +73,15 @@ class PGLog extends Logger
         600 => 'emergency',
     ];
 
+    /**
+     * PGLog constructor.
+     *
+     * @param string             $name
+     * @param array              $config
+     * @param array              $handlers
+     * @param array              $processors
+     * @param \DateTimeZone|null $timezone
+     */
     public function __construct(
         string $name,
         array $config,

@@ -17,8 +17,7 @@ use PG\Log\Handler\PGStreamHandler;
 class PGLog extends Logger
 {
     /**
-     * 访问请求日志变量，此变量不用unset，因为每次请求initialization都会重新赋值
-     * @var array
+     * @var array 访问请求日志变量
      */
     public $accessRecord = [];
 

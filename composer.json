@@ -1,12 +1,12 @@
 {
-    "name": "PGWireless/php-log",
+    "name": "pinguo/php-log",
     "description": "Pinguo PHP log lib",
     "license": "BSD-3-Clause",
     "type": "library",
     "support": {
-        "issues": "https://github.com/PGWireless/php-log/issues?state=open",
-        "wiki": "https://github.com/PGWireless/php-log/wiki",
-        "source": "https://github.com/PGWireless/php-log"
+        "issues": "https://github.com/pinguo/php-log/issues?state=open",
+        "wiki": "https://github.com/pinguo/php-log/wiki",
+        "source": "https://github.com/pinguo/php-log"
     },
     "require": {
         "php": ">=7.0",

@@ -1,4 +1,4 @@
-# PGWireless php-log
+# pinguo php-log
 
 品果微服务日志库，继承于开源Monolog日志库，为php-msf微服务框架提供日志记录功能及追踪整个访问调用链
 

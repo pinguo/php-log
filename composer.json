@@ -1,7 +1,7 @@
 {
     "name": "pinguo/php-log",
-    "description": "Pinguo PHP log lib",
-    "license": "BSD-3-Clause",
+    "description": "Pinguo PHP log",
+    "license": "GPL",
     "type": "library",
     "support": {
         "issues": "https://github.com/pinguo/php-log/issues?state=open",

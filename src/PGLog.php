@@ -169,13 +169,14 @@ class PGLog extends Logger
 
         $levelName = static::getLevelName($level);
 
+        $uTime  = explode(" ", microtime());
         $record = [
             'message' => $message,
             'context' => $context,
             'level' => $level,
             'level_name' => $levelName,
             'channel' => $this->name,
-            'datetime' => date('Y/m/d H:i:s'),
+            'datetime' => date('Y/m/d H:i:s', $uTime[1]) . trim($uTime[0], '0'),
             'extra' => [],
         ];
 

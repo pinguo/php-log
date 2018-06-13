@@ -10,7 +10,7 @@
     },
     "require": {
         "php": ">=7.0",
-        "monolog/monolog": "dev-master"
+        "monolog/monolog": "2.x-dev"
     },
     "autoload": {
         "psr-4": {

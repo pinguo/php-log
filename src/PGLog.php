@@ -149,7 +149,7 @@ class PGLog extends Logger
      * @param array $context The log context
      * @return Boolean Whether the record has been processed
      */
-    public function addRecord(int $level, string $message, array $context = []): bool
+    public function addRecord($level, $message, array $context = [])
     {
         // check if any handler will handle this message so we can return early and save cycles
         $handlerKey = null;
